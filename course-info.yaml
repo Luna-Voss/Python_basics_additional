@@ -1,0 +1,8 @@
+title: SDA Python PL v2.2
+language: Polish
+summary: Zadania domowe SDA dla kursu "Python od Podstaw"
+programming_language: Python
+environment: unittest
+content:
+- Python podstawy
+mode: Study

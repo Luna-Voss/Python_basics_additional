@@ -1,0 +1,85 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 0
+    length: 30
+    placeholder_text: '# Tu zaimplementuj rozwiązanie'
+    initial_state:
+      length: 30
+      offset: 0
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: |
+      text = input()
+
+      if "Python" in text:
+          print("Znalazłem Python")
+
+      if text.startswith("Python"):
+          print("Zaczyna się od Python")
+
+      if text.endswith("Python"):
+          print("Kończy się na Python")
+
+      if text == "Python":
+          print("Równa się Python")
+
+      print(text.index("Python"))
+  text: '# Tu zaimplementuj rozwiązanie'
+  learner_created: false
+- name: tests/test_task.py
+  visible: false
+  text: |
+    import unittest
+
+
+    def run(lines):
+        try:
+            import traceback
+        except:
+            return "can't import traceback"
+        try:
+            import os
+            import pathlib
+            import subprocess
+            import sys
+            file_dir = pathlib.Path(__file__).absolute().parent
+            cmd = [sys.executable, str(file_dir.parent / 'task.py')]
+            proc = subprocess.Popen(cmd,
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE,
+                                    stdin=subprocess.PIPE,
+                                    encoding='utf-8',   # also for universal newlines
+                                    )
+            # we need to use '\n' even on Windows
+            stdout, stderr = proc.communicate('\n'.join(lines) + '\n')
+            # if everything is fine, stderr is empty
+            return stdout + stderr
+        except:
+            return f"cwd: {os.getcwd()}\n{traceback.format_exc()}"
+
+
+    class TestCase(unittest.TestCase):
+        def test_1(self):
+            out = run(['Python'])
+            expected = "Znalazłem Python\nZaczyna się od Python\nKończy się na Python\nRówna się Python\n0\n"
+            self.assertEqual(expected, out,
+                             msg="Dla tekstu Python, program powinien wypisać w konsoli: \n{}".format(expected))
+
+        def test_2(self):
+            out = run(['Kurs python od podstaw to najlepsza droga do poznania Python'])
+            expected = "Znalazłem Python\nKończy się na Python\n54\n"
+            self.assertEqual(expected, out,
+                             msg="Dla tekstu Kurs python od podstaw to najlepsza droga do poznania Python, program powinien wypisać w konsoli: \n{}".format(expected))
+
+        def test_3(self):
+            out = run(['Tylko Python!'])
+            expected = "Znalazłem Python\n6\n"
+            self.assertEqual(expected, out,
+                             msg="Dla tekstu Tylko Python!, program powinien wypisać w konsoli: \n{}".format(expected))
+  learner_created: false
+status: Unchecked
+record: -1

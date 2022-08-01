@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: print(typeOf(x))
+  is_correct: false
+- text: print(typeof(x))
+  is_correct: false
+- text: print(type(x))
+  is_correct: true
+- text: print(typeof x)
+  is_correct: false
+files:
+- name: main.py
+  visible: true
+  text: |
+    if __name__== "__main__":
+        pass
+  learner_created: false
+status: Unchecked
+record: -1
+local_check: true

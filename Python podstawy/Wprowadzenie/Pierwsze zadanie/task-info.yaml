@@ -1,0 +1,28 @@
+type: output
+files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    Hello world
+  learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 0
+    length: 30
+    placeholder_text: '# Tu zaimplementuj rozwiązanie'
+    initial_state:
+      length: 30
+      offset: 0
+    initialized_from_dependency: false
+    selected: false
+    status: Unchecked
+    encrypted_possible_answer: print("Hello world")
+  text: |
+    # Tu zaimplementuj rozwiązanie
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: String komunikat = ‘Nieprawidłowa wartość’;
+  is_correct: false
+- text: cena = 103,12;
+  is_correct: false
+- text: milion = 1_000_000;
+  is_correct: true
+- text: wyjscie == “x”;
+  is_correct: false
+- text: char opis = ‘Aparat forograficzny’;
+  is_correct: false
+files:
+- name: main.py
+  visible: true
+  text: |
+    if __name__ == "__main__":
+        pass
+  learner_created: false
+status: Unchecked
+record: -1
+local_check: true

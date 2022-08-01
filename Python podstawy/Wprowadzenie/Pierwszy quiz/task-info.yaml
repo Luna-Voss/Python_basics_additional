@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Hello world
+  is_correct: true
+- text: Aloha!
+  is_correct: false
+- text: Hallo Welt!
+  is_correct: false
+- text: Dzień dobry
+  is_correct: false
+files:
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: task.py
+  visible: true
+  learner_created: false
+status: Unchecked
+record: -1
+local_check: true

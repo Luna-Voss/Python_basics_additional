@@ -1,0 +1,1 @@
+Jak sprawdzić typ zmiennej?

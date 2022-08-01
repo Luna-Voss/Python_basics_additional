@@ -1,0 +1,1 @@
+Które słowo zarezerwowane jest używane wyłącznie w celu przerwania pętli?

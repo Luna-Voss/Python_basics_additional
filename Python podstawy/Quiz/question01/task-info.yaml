@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: print("Hello World")
+  is_correct: true
+- text: System.out.println("Hello World")
+  is_correct: false
+- text: Console.WriteLine("Hello World")
+  is_correct: false
+- text: echo("Hello World")
+  is_correct: false
+files:
+- name: main.py
+  visible: true
+  text: |
+    if __name__ == "__main__":
+        pass
+  learner_created: false
+status: Unchecked
+record: -1
+local_check: true

@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: myString
+  is_correct: false
+- text: string
+  is_correct: false
+- text: Txt
+  is_correct: false
+- text: str
+  is_correct: true
+files:
+- name: main.py
+  visible: true
+  text: |
+    if __name__ == "__main__":
+        pass
+  learner_created: false
+status: Unchecked
+record: -1
+local_check: true
